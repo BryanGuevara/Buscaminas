@@ -96,6 +96,10 @@ body {
     background-color: #ff6666; 
 }
 
+.cell.win {
+    background-color: #107e19; 
+}
+
 .cell button {
     background-color: inherit; 
     color: #333;

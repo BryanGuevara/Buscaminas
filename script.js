@@ -6,6 +6,8 @@ let remainingCells = 0;
 let gameOver = false;
 let startTime = null;
 let timerInterval = null;
+let bomb = '💥';
+let casillaClass = 'bomb';
 
 function setDifficulty() {
     const select = document.getElementById('difficulty-select');
@@ -14,13 +16,25 @@ function setDifficulty() {
     if (difficulty === 'ruleta') {
         BOARD_SIZE = 2;
         NUM_MINES = 1;
-    } else if (difficulty === 'easy') {
+    } else if (difficulty === 'small1') {
+        BOARD_SIZE = 5;
+        NUM_MINES = 3;
+    } else if (difficulty === 'small2') {
+        BOARD_SIZE = 5;
+        NUM_MINES = 5;
+    } else if (difficulty === 'small3') {
         BOARD_SIZE = 5;
         NUM_MINES = 10;
-    } else if (difficulty === 'medium') {
+    } else if (difficulty === 'medium1') {
+        BOARD_SIZE = 8;
+        NUM_MINES = 4;
+    } else if (difficulty === 'medium2') {
+        BOARD_SIZE = 8;
+        NUM_MINES = 8;
+    } else if (difficulty === 'medium3') {
         BOARD_SIZE = 8;
         NUM_MINES = 16;
-    } else if (difficulty === 'hard') {
+    } else if (difficulty === 'big') {
         BOARD_SIZE = 10;
         NUM_MINES = 20;
     }
@@ -48,6 +62,8 @@ function initializeGame() {
     remainingCells = BOARD_SIZE * BOARD_SIZE - NUM_MINES;
     gameOver = false;
     startTime = null;
+    bomb = '💥';
+    casillaClass = 'bomb';
     clearInterval(timerInterval);
     const timeElement = document.getElementById('time');
     timeElement.textContent = '0';
@@ -89,8 +105,8 @@ function renderBoard() {
             if (revealedBoard[x][y]) {
                 cell.classList.add('revealed');
                 if (board[x][y]) {
-                    cell.classList.add('bomb');
-                    cell.textContent = '💣';
+                    cell.classList.add(casillaClass);
+                    cell.textContent = bomb;
                 } else {
                     const adjacentMines = countAdjacentMines(x, y);
                     cell.textContent = adjacentMines > 0 ? adjacentMines : '';
@@ -198,8 +214,16 @@ function updateTimer() {
 
 function updateTimerMessage(hasWon) {
     const currentTime = Math.floor((Date.now() - startTime) / 1000);
-    const message = hasWon ? `Has ganado. Tiempo transcurrido: ${currentTime}` : `Has perdido. Tiempo transcurrido: ${currentTime}`;
+    
+    const message = hasWon ? `¡Felicidades! has gando en ${currentTime}` : `Has perdido  Precione Reiniciar para volver a jugar Tiempo transcurrido: ${currentTime}`;
     document.getElementById('time').textContent = message;
+
+    if (hasWon) {
+        casillaClass = 'win';
+        bomb = '💣';
+        revealAllBombs();
+        const cells = document.querySelectorAll('.cell');
+    }
 }
 
 window.onload = function() {
