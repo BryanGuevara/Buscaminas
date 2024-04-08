@@ -6,27 +6,33 @@
     <title>Buscaminas</title>
     <link rel="icon" type="image/png" href="img/ico.png">
     <link rel="stylesheet" href="styles.css">
-    <style>body{background-image: url("img/wallpaper.jpg");background-repeat: no-repeat; background-size: 100%;}</style>
 </head>
 <body>
     <div id="container">
         <div class="controls-container">
             <select id="difficulty-select">
                 <option value="" disabled selected>Seleccione una dificultad</option>
-                <option value="ruleta">Ruleta (2x2 - 1)</option>
+                <option value="" disabled><hr></option>
+                <option value="" disabled><b>Clasico</b></option>
                 <option value="small1">Pequeño (5x5 - 3)</option>
                 <option value="small2">Pequeño (5x5 - 5)</option>
                 <option value="small3">Pequeño (5x5 - 10)</option>
                 <option value="medium1">Medio (8x8 - 4)</option>
                 <option value="medium2">Medio (8x8 - 8)</option>
                 <option value="medium3">Medio (8x8 - 16)</option>
-                <option value="big">Grande (10x10 - 20)</option>
+                <option value="big1">Grande (10x10 - 10)</option>
+                <option value="big2">Grande (10x10 - 20)</option>
+                <option value="xl1">XL (12x12 - 12)</option>
+                <option value="xl2">XL (12x12 - 24)</option>
+                <option value="" disabled><hr></option>
+                <option value="" disabled><b>Especiales</b></option>
+                <option value="ruleta">Ruleta (2x2 - 1)</option>
+                <option value="unop">1% (10x10 - 99)</option>
             </select>
             <br>
             <button id="start-button">Iniciar</button>
             <button id="reset-button" style="display: none;">Reiniciar</button>
-            <br>
-            <div id="timer"><span id="time">0</span>s</div>
+            <div><div id="timer"><span id="time">0</span>s</div></div>
         </div>
         <div id="game-container"></div>
     </div>

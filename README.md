@@ -1,26 +1,47 @@
 # Buscaminas
 
-¡Bienvenido al juego de buscaminas! Este juego clásico te desafía a descubrir todas las casillas que no contienen bombas sin detonar ninguna.
+¡Bienvenido al juego de **buscaminas**! Este juego clásico te desafía a descubrir todas las casillas que no contienen bombas sin detonar ninguna.
 
 ## Dificultades
 
-### Ruleta (2x2 - 1)
-Inspirado en la ruleta rusa, donde se revela una casilla por una, ¡mantén la calma y elige sabiamente!
+El formato "nxn - n" en el juego representa el tamaño del tablero y la cantidad de bombas, respectivamente. Por ejemplo, "5x5 - 3" indica un tablero de 5x5 casillas con 3 bombas escondidas.
 
 ### Pequeño
-- 5x5 - 3
-- 5x5 - 5
-- 5x5 - 10
+
+| Dificultad | Tamaño | Minas | Descripción |
+|------------|--------|-------|-------------|
+| Pequeño    | 5x5    | 3     | Descripción del modo pequeño con 5x5 casillas y 3 minas. |
+| Pequeño    | 5x5    | 5     | Descripción del modo pequeño con 5x5 casillas y 5 minas. |
+| Pequeño    | 5x5    | 10    | Descripción del modo pequeño con 5x5 casillas y 10 minas. |
 
 ### Mediano
-- 8x8 - 4
-- 8x8 - 8
-- 8x8 - 16
+
+| Dificultad | Tamaño | Minas | Descripción |
+|------------|--------|-------|-------------|
+| Mediano    | 8x8    | 4     | Descripción del modo mediano con 8x8 casillas y 4 minas. |
+| Mediano    | 8x8    | 8     | Descripción del modo mediano con 8x8 casillas y 8 minas. |
+| Mediano    | 8x8    | 16    | Descripción del modo mediano con 8x8 casillas y 16 minas. |
 
 ### Grande
-- 10x10 - 20
 
-El formato "nxn - n" representa el tamaño del tablero y la cantidad de bombas, respectivamente. Por ejemplo, "5x5 - 3" indica un tablero de 5x5 casillas con 3 bombas escondidas.
+| Dificultad | Tamaño | Minas | Descripción |
+|------------|--------|-------|-------------|
+| Grande     | 10x10  | 10    | Descripción del modo grande con 10x10 casillas y 10 minas. |
+| Grande     | 10x10  | 20    | Descripción del modo grande con 10x10 casillas y 20 minas. |
+
+### XL
+
+| Dificultad | Tamaño | Minas | Descripción |
+|------------|--------|-------|-------------|
+| XL         | 12x12  | 12    | Descripción del modo XL con 12x12 casillas y 12 minas. |
+| XL         | 12x12  | 24    | Descripción del modo XL con 12x12 casillas y 24 minas. |
+
+### Especiales
+
+|Dificultad|Tamaño|Minas|descripcion|
+|-|-|-|-|
+|Ruleta|2x2|1|Inspirado en la ruleta rusa, donde se revela una casilla por una, ¡mantén la calma y elige sabiamente!|
+|1%| 10x10| 99|En este modo solo tienes el 1% de posibilidades de acertar, ¡Buena suerte!|
 
 ¡Diviértete y ten cuidado con las bombas!
 

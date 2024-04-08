@@ -8,35 +8,60 @@ let startTime = null;
 let timerInterval = null;
 let bomb = '💥';
 let casillaClass = 'bomb';
+let difficulty;
 
 function setDifficulty() {
     const select = document.getElementById('difficulty-select');
-    const difficulty = select.value;
+    difficulty = select.value;
 
     if (difficulty === 'ruleta') {
         BOARD_SIZE = 2;
         NUM_MINES = 1;
+        reset();
+    }  else if (difficulty === 'unop') {
+        BOARD_SIZE = 10;
+        NUM_MINES = 99;
+        reset();
     } else if (difficulty === 'small1') {
         BOARD_SIZE = 5;
         NUM_MINES = 3;
+        reset();
     } else if (difficulty === 'small2') {
         BOARD_SIZE = 5;
         NUM_MINES = 5;
+        reset();
     } else if (difficulty === 'small3') {
         BOARD_SIZE = 5;
         NUM_MINES = 10;
+        reset();
     } else if (difficulty === 'medium1') {
         BOARD_SIZE = 8;
         NUM_MINES = 4;
+        reset();
     } else if (difficulty === 'medium2') {
         BOARD_SIZE = 8;
         NUM_MINES = 8;
+        reset();
     } else if (difficulty === 'medium3') {
         BOARD_SIZE = 8;
         NUM_MINES = 16;
-    } else if (difficulty === 'big') {
+        reset();
+    } else if (difficulty === 'big1') {
+        BOARD_SIZE = 10;
+        NUM_MINES = 10;
+        reset();
+    } else if (difficulty === 'big2') {
         BOARD_SIZE = 10;
         NUM_MINES = 20;
+        reset();
+    } else if (difficulty === 'xl1') {
+        BOARD_SIZE = 12;
+        NUM_MINES = 12;
+        reset();
+    } else if (difficulty === 'xl2') {
+        BOARD_SIZE = 12;
+        NUM_MINES = 24;
+        reset();
     }
 
     const gameContainer = document.getElementById('game-container');
@@ -49,6 +74,16 @@ function setDifficulty() {
         cell.classList.add('cell');
         gameContainer.appendChild(cell);
     }
+}
+
+function reset(){
+    clearInterval(timerInterval);
+    const timeElement = document.getElementById('time');
+    timeElement.textContent = '0';
+    document.getElementById('time').textContent = '0';
+    document.getElementById('reset-button').style.display = 'none';
+    document.getElementById('start-button').style.display = 'inline-block';
+
 }
 
 function startGame() {
@@ -158,7 +193,6 @@ function revealCell(x, y) {
         startTime = Date.now();
         timerInterval = setInterval(updateTimer, 1000);
     }
-
     revealedBoard[x][y] = true;
     remainingCells--;
 
@@ -186,14 +220,12 @@ function revealCell(x, y) {
             for (let j = -1; j <= 1; j++) {
                 const newX = x + i;
                 const newY = y + j;
-
                 if (newX >= 0 && newX < BOARD_SIZE && newY >= 0 && newY < BOARD_SIZE) {
                     revealCell(newX, newY);
                 }
             }
         }
     }
-
     renderBoard();
 }
 
