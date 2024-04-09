@@ -21,6 +21,7 @@ El formato "nxn - n" en el juego representa el tamaño del tablero y la cantidad
 | Mediano    | 8x8    | 4     | Descripción del modo mediano con 8x8 casillas y 4 minas. |
 | Mediano    | 8x8    | 8     | Descripción del modo mediano con 8x8 casillas y 8 minas. |
 | Mediano    | 8x8    | 16    | Descripción del modo mediano con 8x8 casillas y 16 minas. |
+| Mediano    | 8x8    | 32    | Descripción del modo mediano con 8x8 casillas y 16 minas. |
 
 ### Grande
 
@@ -28,6 +29,7 @@ El formato "nxn - n" en el juego representa el tamaño del tablero y la cantidad
 |------------|--------|-------|-------------|
 | Grande     | 10x10  | 10    | Descripción del modo grande con 10x10 casillas y 10 minas. |
 | Grande     | 10x10  | 20    | Descripción del modo grande con 10x10 casillas y 20 minas. |
+| Grande     | 10x10  | 50    | Descripción del modo grande con 10x10 casillas y 50 minas. |
 
 ### XL
 
@@ -35,6 +37,7 @@ El formato "nxn - n" en el juego representa el tamaño del tablero y la cantidad
 |------------|--------|-------|-------------|
 | XL         | 12x12  | 12    | Descripción del modo XL con 12x12 casillas y 12 minas. |
 | XL         | 12x12  | 24    | Descripción del modo XL con 12x12 casillas y 24 minas. |
+| XL         | 12x12  | 72    | Descripción del modo XL con 12x12 casillas y 72 minas. |
 
 ### Especiales
 

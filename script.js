@@ -46,6 +46,10 @@ function setDifficulty() {
         BOARD_SIZE = 8;
         NUM_MINES = 16;
         reset();
+    } else if (difficulty === 'medium4') {
+        BOARD_SIZE = 8;
+        NUM_MINES = 32;
+        reset();
     } else if (difficulty === 'big1') {
         BOARD_SIZE = 10;
         NUM_MINES = 10;
@@ -54,6 +58,10 @@ function setDifficulty() {
         BOARD_SIZE = 10;
         NUM_MINES = 20;
         reset();
+    } else if (difficulty === 'big3') {
+        BOARD_SIZE = 10;
+        NUM_MINES = 50;
+        reset();
     } else if (difficulty === 'xl1') {
         BOARD_SIZE = 12;
         NUM_MINES = 12;
@@ -61,6 +69,10 @@ function setDifficulty() {
     } else if (difficulty === 'xl2') {
         BOARD_SIZE = 12;
         NUM_MINES = 24;
+        reset();
+    } else if (difficulty === 'xl3') {
+        BOARD_SIZE = 12;
+        NUM_MINES = 72;
         reset();
     }
 
